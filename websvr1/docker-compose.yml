@@ -9,6 +9,9 @@ services:
       - ${PWD}/ansible:/etc/ansible
     links:
       - web1
+      - web2
+      - web3
+      - web4
     ports:
       - "2222:22"
     networks:
@@ -16,6 +19,30 @@ services:
 
   web1:
     container_name: websvr1-web1 
+    image: centos-ssh 
+    volumes:
+      - ${PWD}/.ssh:/root/.ssh/
+    networks:
+      - net
+ 
+  web2:
+    container_name: websvr1-web2 
+    image: centos-ssh 
+    volumes:
+      - ${PWD}/.ssh:/root/.ssh/
+    networks:
+      - net
+ 
+  web3:
+    container_name: websvr1-web3 
+    image: centos-ssh 
+    volumes:
+      - ${PWD}/.ssh:/root/.ssh/
+    networks:
+      - net
+ 
+  web4:
+    container_name: websvr1-web4 
     image: centos-ssh 
     volumes:
       - ${PWD}/.ssh:/root/.ssh/

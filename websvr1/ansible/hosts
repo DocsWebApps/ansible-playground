@@ -43,4 +43,7 @@
 ## db-[99:101]-node.example.com
 [web-servers]
 web1
+web2
+web3
+web4
 

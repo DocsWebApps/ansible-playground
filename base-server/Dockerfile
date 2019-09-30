@@ -11,6 +11,7 @@ EXPOSE 22
 RUN yum -y erase vim-minimal iputils libss && \
     yum -y install openssh openssh-server openssh-clients && \
     yum -y install epel-release ansible && \
+    yum -y install vim wget curl && \
     yum -y clean all
 
 ADD start.sh /start.sh
@@ -21,4 +22,4 @@ ENTRYPOINT ["/tini", "-g", "--"]
 
 CMD /start.sh
 
-# Build Image: docker build -t docswebapps/ansible-server .
+# Build Image: docker build -t ansible-server .

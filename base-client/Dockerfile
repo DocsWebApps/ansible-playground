@@ -20,4 +20,4 @@ ENTRYPOINT ["/tini", "-g", "--"]
 
 CMD /start.sh
 
-# Build Image: docker build -t docswebapps/centos-ssh .
+# Build Image: docker build -t centos-ssh .
