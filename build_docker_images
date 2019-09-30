@@ -1,0 +1,2 @@
+docker build -t ansible-server ./base-server
+docker build -t centos-ssh ./base-client

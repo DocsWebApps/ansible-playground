@@ -1,0 +1,26 @@
+version: '3'
+services:
+  
+  server:
+    container_name: websvr1-ansible 
+    image: ansible-server
+    volumes:
+      - ${PWD}/.ssh:/root/.ssh/
+      - ${PWD}/ansible:/etc/ansible
+    links:
+      - web1
+    ports:
+      - "2222:22"
+    networks:
+      - net 
+
+  web1:
+    container_name: websvr1-web1 
+    image: centos-ssh 
+    volumes:
+      - ${PWD}/.ssh:/root/.ssh/
+    networks:
+      - net 
+
+networks:
+  net:
