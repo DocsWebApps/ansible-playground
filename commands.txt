@@ -1,3 +1,6 @@
 ssh-copy-id -i /root/.ssh/id_rsa.pub root@docsdevops : Copy ssh public key to remote host
 ansible -m ping {all | host} : Ping all or single host/group
 ansible-playbook ./{playbook-name.yml} : Run playbook
+ansinle -m ping all : Ping all ansible servers in /etc/ansible/hosts
+ansible web1 -m service -a "name=httpd state=stopped" : Stop httspd service on web1
+ansible-playbook nginx-install.yml : Install nginx on web1

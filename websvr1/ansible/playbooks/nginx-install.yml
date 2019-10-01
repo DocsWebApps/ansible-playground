@@ -1,10 +1,7 @@
 - name: Install nginx on remote hosts
-
   hosts: web-servers
-
   vars:
     - s_name: "docswebapps"
-
   tasks:  
     - name: Install EPEL repo in CentOS
       yum: name=epel-release state=present
@@ -17,12 +14,11 @@
       file: dest=/srv/{{ s_name }} state=directory
 
     - name: Copy virtualhost config
-      template: src=./files/default.conf dest=/etc/nginx/conf.d/{{ s_name }}.conf
+      template: src=/etc/ansible/files/default.conf dest=/etc/nginx/conf.d/{{ s_name }}.conf
 
     - name: Copy index.html to directory
-      template: src=./files/index.html dest=/srv/{{ s_name}}/index.html
+      template: src=/etc/ansible/files/index.html dest=/srv/{{ s_name}}/index.html
       notify: start nginx
-
   handlers:
     - name: start nginx
       command: /usr/sbin/nginx 

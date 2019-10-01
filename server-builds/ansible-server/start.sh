@@ -19,5 +19,8 @@ chown -R root:root /root/.ssh
 /usr/bin/echo "Please save the printed private RSA key and login using:"
 /usr/bin/echo "\"ssh -i \${savedkey} root@\${ipaddress}\""
 
+# Remove known_hosts 
+rm -f /root/.ssh/known_hosts
+
 # Now start ssh.
 /usr/sbin/sshd -D
