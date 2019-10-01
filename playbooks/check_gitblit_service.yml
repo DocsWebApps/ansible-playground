@@ -1,0 +1,5 @@
+-
+  name:  Check gitblit service is running 
+  hosts: docsdevops
+  tasks:
+    - service: name=gitblit state=started 

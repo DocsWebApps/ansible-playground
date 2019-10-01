@@ -1,0 +1,3 @@
+ssh-copy-id -i /root/.ssh/id_rsa.pub root@docsdevops : Copy ssh public key to remote host
+ansible -m ping {all | host} : Ping all or single host/group
+ansible-playbook ./{playbook-name.yml} : Run playbook
